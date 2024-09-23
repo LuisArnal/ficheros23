@@ -1,7 +1,7 @@
 package menu;
 
 public class Menu {
-    public Menu{
+    public Menu() {
     boolean salir = false;
     String opcion = "";
         do {

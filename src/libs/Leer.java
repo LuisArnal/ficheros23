@@ -256,4 +256,7 @@ public class Leer {
         }
         return dato;
     }
+
+    public static void clearScreen() {
+    }
 }
