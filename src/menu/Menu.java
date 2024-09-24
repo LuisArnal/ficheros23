@@ -1,40 +1,53 @@
 package menu;
 
+import java.util.Scanner;
+
 public class Menu {
-    public Menu() {
-    boolean salir = false;
-    String opcion = "";
-        do {System.out.println("--------------------------");
+    private boolean salir = false;
+    private Scanner sc = new Scanner(System.in);
+
+public void mostrarMenu(){
+        String opcion;
+    do {
+        System.out.println("--------------------------");
         System.out.println("0. Salir");
-        System.out.println("1. Ejercicio1 ficheros");
+        System.out.println("1. Comprobar Fichero");
         System.out.println("2. Ejercicio1 ficheros NIO");
         System.out.println("3. Ejercicio2 ficheros");
         System.out.println("4. Ejercicio2 ficheros NIO");
         System.out.println("--------------------------");
 
-        opcion = libs.Leer.pedirCadena("Introduce una opción");
-        switch (opcion) {
-            case "0" -> {
-                salir = true;
-            }
-            case "1" -> {
-                code.ej1.checkFiles();
-            }
-            case "2" -> {
-                libs.Leer.clearScreen();
-                code.ej1NIO.checkFilesNIO();
-            }
-            case "3" -> {
-                code.ej2.listarDir();
-            }
-            case "4" -> {
+        System.out.println("Introduce una opción");
+        opcion = this.pideOpcion();
+        this.procesarOpcion(opcion);
 
-            }
-            default -> {
-                libs.Leer.clearScreen();
-                System.out.println("Opción incorrecta");
-            }
-        }
     }while (!salir);
 }
+
+private void procesarOpcion(String opcion) {
+    switch (opcion) {
+        case "0" -> {
+            salir = true;
+        }
+        case "1" -> {
+            MenuComprobaciones menuTest = new MenuComprobaciones();
+            menuTest.mostrarMenuComprobaciones();
+        }
+        case "2" -> {
+
+        }
+        case "3" -> {
+
+        }
+        case "4" -> {
+
+        }
+        default -> {
+            System.out.println("Opción incorrecta");
+        }
+    }
+}
+    private String pideOpcion() {
+        return this.sc.nextLine();
+    }
 }
