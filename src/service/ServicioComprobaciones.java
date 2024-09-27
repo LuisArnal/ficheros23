@@ -9,15 +9,23 @@ import java.nio.file.Path;
 
 public class ServicioComprobaciones {
 
-    public boolean existe(String ruta){
-        Path p = Path.of(ruta);
+    public boolean existeFichero(Path ruta){
+
         boolean existe = false;
-        //String mensaje="";
 
-        if (Files.exists(p)) {
+        if (Files.exists(ruta)) {
             existe = true;
-        }else{
+        }
+        return existe;
+    }
 
+
+    public boolean existeDirectorio(Path ruta){
+
+        boolean existe = false;
+
+        if (Files.isDirectory(ruta)) {
+            existe = true;
         }
         return existe;
     }

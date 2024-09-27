@@ -11,10 +11,8 @@ public void mostrarMenu(){
     do {
         System.out.println("--------------------------");
         System.out.println("0. Salir");
-        System.out.println("1. Comprobar Fichero");
-        System.out.println("2. Ejercicio1 ficheros NIO");
-        System.out.println("3. Ejercicio2 ficheros");
-        System.out.println("4. Ejercicio2 ficheros NIO");
+        System.out.println("1. Comprobaciones");
+        System.out.println("2. Acceso a Ficheros");
         System.out.println("--------------------------");
 
         System.out.println("Introduce una opción");
@@ -34,13 +32,8 @@ private void procesarOpcion(String opcion) {
             menuTest.mostrarMenuComprobaciones();
         }
         case "2" -> {
-
-        }
-        case "3" -> {
-
-        }
-        case "4" -> {
-
+            MenuAccesoFicheros menuAccesoFicheros = new MenuAccesoFicheros();
+            menuAccesoFicheros.mostrarMenuAccesoFicheros();
         }
         default -> {
             System.out.println("Opción incorrecta");
