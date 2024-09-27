@@ -3,6 +3,7 @@ package menu;
 import service.ServicioComprobaciones;
 import service.ServicioLectura;
 
+import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -20,6 +21,8 @@ public class MenuAccesoFicheros {
             System.out.println("0. Salir");
             System.out.println("1. Leer Fichero");
             System.out.println("2. Escribir Fichero");
+            System.out.println("3. Sobreescribir Fichero");
+            System.out.println("4. Listar Directorio");
             System.out.println("--------------------------");
 
             System.out.println("Introduce una opción");
@@ -43,7 +46,7 @@ public class MenuAccesoFicheros {
                 sobreescribirFichero();
             }
             case "4" -> {
-                listarFichero();
+                listarDirectorio();
             }
 
             default -> {
@@ -51,7 +54,6 @@ public class MenuAccesoFicheros {
             }
         }
     }
-
 
     private String pideOpcion() {
         return this.sc.nextLine();
@@ -71,7 +73,16 @@ public class MenuAccesoFicheros {
     }
     private void sobreescribirFichero() {
     }
-    private void listarFichero() {
+    private void listarDirectorio() {
+        Path ruta = MenuComprobaciones.pideRuta();
+        ArrayList<String> lectura = new ArrayList<>();
+
+        if (servicioComprobaciones.existeDirectorio(ruta)){
+            lectura=servicioLectura.listarArchivos(ruta);
+            for (int i = 0; i < lectura.size(); i++) {
+                System.out.println(lectura.get(i));
+            }
+        }
     }
 
 

@@ -20,4 +20,15 @@ public class ServicioLectura {
         }
         return lectura;
     }
+
+    public ArrayList<String> listarArchivos(Path ruta){
+        ArrayList<String> lectura = new ArrayList<>();
+        //Lectura del archivo
+        try {
+            lectura= (ArrayList<String>) Files.list(ruta);
+        } catch (IOException e) {
+            System.out.println("No se puede leer el directorio");
+        }
+        return lectura;
+    }
 }
