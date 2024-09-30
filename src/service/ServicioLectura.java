@@ -23,12 +23,15 @@ public class ServicioLectura {
     }
     public ArrayList<String> escribir(Path ruta){
         ArrayList<String> escritura = new ArrayList<>();
+        String texto=" ";
         //Lectura del archivo
+        /*
         try {
-            escritura= (ArrayList<String>) Files.write(ruta,texto);
+            escritura= (ArrayList<String>) Files.write;
         } catch (IOException e) {
             System.out.println("No se puede leer el archivo");
         }
+        */
         return escritura;
     }
 
