@@ -10,7 +10,6 @@ import java.nio.file.Path;
 public class ServicioComprobaciones {
 
     public boolean existeFichero(Path ruta){
-
         boolean existe = false;
 
         if (Files.exists(ruta)) {
@@ -21,7 +20,6 @@ public class ServicioComprobaciones {
 
 
     public boolean existeDirectorio(Path ruta){
-
         boolean existe = false;
 
         if (Files.isDirectory(ruta)) {

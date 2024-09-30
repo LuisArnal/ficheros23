@@ -70,12 +70,15 @@ public class MenuAccesoFicheros {
         }
     }
     private void escribirFichero() {
+        Path ruta = MenuComprobaciones.pideRuta();
+        System.out.println("-Escriba a continuacion-");
     }
     private void sobreescribirFichero() {
+
     }
     private void listarDirectorio() {
         Path ruta = MenuComprobaciones.pideRuta();
-        ArrayList<String> lectura = new ArrayList<>();
+        ArrayList<String> lectura;
 
         if (servicioComprobaciones.existeDirectorio(ruta)){
             lectura=servicioLectura.listarArchivos(ruta);
@@ -84,6 +87,4 @@ public class MenuAccesoFicheros {
             }
         }
     }
-
-
 }
